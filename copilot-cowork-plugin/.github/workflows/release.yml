@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - run: pnpm install
+      - run: pnpm validate-manifest
+      - run: pnpm package-plugin
+      - uses: actions/upload-artifact@v4
+        with:
+          name: copilot-cowork-plugin-package
+          path: copilot-cowork-plugin.zip
