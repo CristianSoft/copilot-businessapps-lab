@@ -1,0 +1,30 @@
+{
+  "name": "copilot-cowork-plugin",
+  "version": "1.0.0",
+  "description": "Enterprise starter plugin for Microsoft 365 Copilot Cowork with MCP tooling.",
+  "publisher": "your-org",
+  "icons": {
+    "color": "assets/color.png",
+    "outline": "assets/outline.png"
+  },
+  "endpoints": {
+    "mcp": {
+      "url": "http://localhost:3000/api/mcp",
+      "protocol": "mcp"
+    }
+  },
+  "capabilities": [
+    "cowork",
+    "skills"
+  ],
+  "permissions": [
+    "context.documents.read",
+    "context.documents.write"
+  ],
+  "settings": {
+    "mcpServerUrl": {
+      "type": "string",
+      "description": "MCP server endpoint"
+    }
+  }
+}

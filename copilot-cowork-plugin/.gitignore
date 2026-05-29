@@ -1,0 +1,8 @@
+node_modules/
+.pnpm/
+dist/
+coverage/
+.env
+apps/mcp-server/dist/
+apps/mcp-server/node_modules/
+apps/mcp-server/.env
